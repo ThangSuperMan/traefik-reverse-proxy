@@ -8,10 +8,10 @@ services:
       - "8080:8080"
     restart: unless-stopped
     networks:
-      - traefik-vpc
+      - traefik
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./config/traefik.yaml:/etc/traefik/traefik.yaml:ro
 networks:
-  traefik-vpc:
+  traefik:
     external: true

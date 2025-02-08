@@ -4,12 +4,12 @@ services:
     container_name: backend
     restart: unless-stopped
     networks:
-      - traefik-vpc
+      - traefik
     labels:
       - traefik.enable=true
       - traefik.http.routers.backend.rule=Host(`hello-backend.world`)
       - traefik.http.routers.backend.entrypoints=web
       - traefik.http.services.backend.loadbalancer.server.port=3000
 networks:
-  traefik-vpc:
+  traefik:
     external: true
